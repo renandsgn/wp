@@ -1,0 +1,65 @@
+@import url(mixins.less);
+
+.container {
+    .primary-title {
+        margin-bottom: 40px;
+    }
+    .left {
+        max-width: 263px;
+    }
+    .right {
+        > div {
+            max-width: 520px;
+            margin: 0 auto;
+            padding-top: ~"calc(40px + 2vw)";
+            padding-left: 20px;
+            padding-right: 20px;
+            box-sizing: border-box;
+        }
+    }
+    .wrapper-form {
+        .flex(space-between, stretch, wrap);
+        padding-bottom: ~"calc(40px + 2vw)";
+        > div {
+            width: 100%;
+        }
+        .half {
+            max-width: ~"calc(50% - 5px)";
+            width: 100%;
+        }
+        p {
+            color: var(--common-grey);
+            margin-bottom: 20px;
+            margin-top: 5px;
+        }
+        a {
+            text-decoration: underline;
+        }
+        .submit {
+            width: 100%;
+            margin-top: 10px;
+            button {
+                width: 100%;
+            }
+        }
+        .group {
+            margin-bottom: 25px;
+            > div {
+                display: inline-block;
+                &:first-of-type {
+                    margin-right: 15px;
+                }
+                &:last-of-type {
+                    margin-left: 15px;
+                }
+            }
+        }
+    }
+    .querie(screen, 530px, {
+        .wrapper-form {
+            > div.half {
+                max-width: 100%;
+            }
+        }
+    });
+}

@@ -9,9 +9,15 @@
 // }
 
 function loadscripts() {
-    $modal = array('home');
-    if(in_array(get_post_field( 'post_name', get_post() ), $modal)) {
-        wp_enqueue_script('dcsnt', 'https://unpkg.com/micromodal/dist/micromodal.min.js#asyncload', '', '', true );
+    $home = array('home');
+    if (in_array(get_post_field('post_name', get_post()), $home)) {
+        wp_enqueue_script('home', get_template_directory_uri() . '/dist/js/home.js#asyncload', '', '', true);
     }
+
+    $forgot = array('forgot-password', 'password-recovery');
+    if (in_array(get_post_field('post_name', get_post()), $forgot)) {
+        wp_enqueue_script('forgot', get_template_directory_uri() . '/dist/js/forgot.js#asyncload', '', '', true);
+    }
+    wp_enqueue_script('global', get_template_directory_uri() . '/dist/js/common.js#asyncload', '', '', true);
 }
 add_action('wp_enqueue_scripts', 'loadscripts');

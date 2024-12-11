@@ -102,7 +102,7 @@ gulp.task('assistir', function() {
         browserSync({
             // open: 'external',
             host: 'localhost:8443',
-            proxy: 'https://domain.site/site',
+            proxy: 'https://localhost:8443/ativalign',
             // baseDir: "../",
             online: true,
             ghostMode: false,
